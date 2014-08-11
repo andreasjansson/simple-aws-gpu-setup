@@ -41,9 +41,7 @@ If everything is installed properly, and all your environment variables from ste
 3. Create your cheap GPU spot instance
 --------------------------------------
 
-Since we'll use a proprietary NVIDIA AWS image, you'll need to agree to some terms and conditions. Go to https://aws.amazon.com/marketplace/pp/B00FYCDDTE, click *Continue*, on the next page click *Subscribe*.
-
-Back on your terminal, type `fab ensemble.up:gpu`. You should get a prompt like this:
+On your terminal, type `fab ensemble.up:gpu`. You should get a prompt like this:
 
     Calculating changes...
     The following servers will be created:
