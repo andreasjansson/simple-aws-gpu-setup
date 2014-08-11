@@ -54,7 +54,7 @@ Answer `Y`
 
 Now a spot instance will be created, based on the configuration in `gpu.yaml`. This will take around five minutes. If for some reason the current spot price is above the bid in `gpu.yaml`, edit that file such that `bid` is higher than the current asking price (or wait for a few hours for the asking price to go down again).
 
-The image defined in `gpu.yaml` (TODO: ami id) is based on a stock Ubuntu 14.04 image ([ami-8827efe0](http://thecloudmarket.com/image/ami-8827efe0--ubuntu-images-hvm-ssd-ubuntu-trusty-14-04-amd64-server-20140724)) and is bootstrapped with Theano, NumPy, SciPy, Emacs, and some other goodies. The actual bootstrap script is included in the `bootstrap` directory.
+The image defined in `gpu.yaml` (ami-2ca87b44) is based on a stock Ubuntu 14.04 image ([ami-8827efe0](http://thecloudmarket.com/image/ami-8827efe0--ubuntu-images-hvm-ssd-ubuntu-trusty-14-04-amd64-server-20140724)) and is bootstrapped with Theano, NumPy, SciPy, Emacs, and some other goodies. The actual bootstrap script is included in the `bootstrap` directory.
 
 Once that's done you should see your server running if you type
 

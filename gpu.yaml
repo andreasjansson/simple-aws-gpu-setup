@@ -5,12 +5,3 @@ gpu:
   bid: 0.1
   firewall:
     80: "*"
-
-
-gpu2:
-  provider: ec2
-  image: ami-8827efe0
-  size: g2.2xlarge
-  bid: 0.1
-  firewall:
-    80: "*"
