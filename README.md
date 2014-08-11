@@ -41,7 +41,11 @@ If everything is installed properly, and all your environment variables from ste
 3. Create your cheap GPU spot instance
 --------------------------------------
 
-On your terminal, type `fab ensemble.up:gpu`. You should get a prompt like this:
+On your terminal, type
+
+    fab ensemble.up:gpu
+
+You should get a prompt like this:
 
     Calculating changes...
     The following servers will be created:
@@ -82,3 +86,8 @@ Now you can safely start the IPython notebook again.
 I added a `check_theano` notebook to the image. Open the IPython notebook web interface in a browser again and click the `check_theano` notebook. Once inside it, click the first cell and hit Run (or `ctrl-return`). It should say "Used the gpu".
 
 **Don't forget to back up your work regularly to S3 or some other persistent storage, since spot instances can be terminated at any point in time**
+
+When you're done with your instance you can terminate it by typing
+
+    fab -R gpu terminate
+
