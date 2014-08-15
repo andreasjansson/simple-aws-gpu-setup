@@ -30,7 +30,7 @@ Then (on the command line), install [headintheclouds](http://headintheclouds.rea
 
 Download this repository:
 
-    git clone git@github.com:andreasjansson/simple-aws-gpu-setup
+    git clone https://github.com/andreasjansson/chordrec.git
 
 Cd into the repo root:
 

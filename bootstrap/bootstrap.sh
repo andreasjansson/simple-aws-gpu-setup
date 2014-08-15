@@ -21,7 +21,8 @@ sudo apt-get install -y \
     uuid-dev \
     libzmq-dev \
     ipython-notebook \
-    python-nose
+    python-nose \
+    git \
 
 sudo pip install envtpl
 
@@ -59,3 +60,4 @@ sudo pip install \
 envtpl -o ~/.theanorc files/dot_theanorc.tpl
 mkdir ~/.emacs.d
 cp files/dot_emacs ~/.emacs.d/init.el
+cp files/dot_gitconfig ~/.gitconfig
