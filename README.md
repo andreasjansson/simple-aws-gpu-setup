@@ -73,11 +73,11 @@ On the remote machine, start an IPython notebook on port 80
 
     sudo ipython notebook --ip=0.0.0.0 --port=80 --no-browser
 
-You can access the notebook using the `public_ip` address from the `fab nodes` command.
+You can access the notebook in a web browser using the `public_ip` address from the `fab nodes` command.
 
 Since this notebook is world readable, anyone can access your machine as root. That's a terrible idea. So shut down the notebook by hitting `ctrl-c`.
 
-On your local machine, figure out your public IP address (either just google `what is my ip` or `curl ifconfig.me`). Replace `80: "*"` in the firewall config of `gpu.yaml` with `80: YOUR_PUBLIC_IP`. For the firewall to be applied, once again run
+On your local machine, figure out your public IP address (either just google "what is my ip" or `curl ifconfig.me`). Replace `80: "*"` in the firewall config of `gpu.yaml` with `80: YOUR_PUBLIC_IP`. For the firewall to be applied, once again run
 
     fab ensemble.up:gpu
 
