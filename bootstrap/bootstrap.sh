@@ -1,17 +1,18 @@
 #!/bin/bash
 
-set -e
+set -eux
 
-sudo apt-get update
+sudo aptitude update
 
-sudo apt-get install -y \
+sudo DEBIAN_FRONTEND=noninteractive aptitude install -y -o Dpkg::Options::="--force-confnew" -o Dpkg::Options::="--force-confold" \
     build-essential \
     openssh-server \
     emacs24-nox \
     wget \
     libglu-dev \
     linux-headers-`uname -r` \
-    linux-image-generic \
+    linux-image-`uname -r` \
+    linux-image-extra-`uname -r` \
     python-pip \
     python-dev \
     gfortran \
@@ -20,11 +21,8 @@ sudo apt-get install -y \
     liblapack-dev \
     uuid-dev \
     libzmq-dev \
-    ipython-notebook \
     python-nose \
     git \
-
-sudo pip install envtpl
 
 export CUDA_BUILD=/mnt/cuda
 export CUDA_HOME=/opt/cuda
@@ -45,19 +43,11 @@ sudo ./cuda_6.0.37_linux_64.run \
     -kernel-source-path=/usr/src/linux-headers-`uname -r`
 popd
 
-sudo CUDA_HOME=$CUDA_HOME envtpl -o /etc/environment --keep-template files/environment.tpl
-sudo CUDA_HOME=$CUDA_HOME envtpl -o /etc/ld.so.conf.d/cuda.conf --keep-template files/ld_cuda.conf.tpl
-sudo cp files/blacklist-cuda.conf /etc/modprobe.d/blacklist-cuda.conf
-sudo cp files/50_blacklist_nouveau.conf /etc/grub.d/50_blacklist_nouveau.conf
 sudo update-initramfs -u
 
 sudo ldconfig
 
 sudo pip install \
     pylint==0.28.0 \
+    ipython[all]==2.4.0 \
     theano
-
-envtpl -o ~/.theanorc files/dot_theanorc.tpl
-mkdir ~/.emacs.d
-cp files/dot_emacs ~/.emacs.d/init.el
-cp files/dot_gitconfig ~/.gitconfig

@@ -1,0 +1,8 @@
+[global]
+device = gpu
+floatX = float32
+warn_float_64 = warn
+cast_policy = numpy+floatX
+
+[cuda]
+root = /opt/cuda/toolkit

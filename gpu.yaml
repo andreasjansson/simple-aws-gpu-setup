@@ -1,6 +1,6 @@
 gpu:
   provider: ec2
-  image: ami-2ca87b44
+  image: ami-1ca6f874
   size: g2.2xlarge
   bid: 0.1
   firewall:

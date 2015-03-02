@@ -1,0 +1,4 @@
+build:
+  provider: ec2
+  image: ami-8827efe0
+  size: g2.2xlarge
